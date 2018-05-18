@@ -41,7 +41,7 @@ When evaluating your test, the following things are especially important to us:
 - Is your solution compatible with at least two rendering engines (let us know which ones they are).
 
 
-### Instructions
+## Instructions
 * run `npm install` for dependencies.
 * Use a http server to load app. I've used Http-server repo from npm.
 * use grunt tasks such as `grunt server` to start web server.
@@ -68,16 +68,16 @@ With lazy loading I can't use `srcset` and `sizes` tag, so I used `data-srcset` 
 
 ###### Performance
 SQIP and lazy loading
-Before: video_thumb_01.svg = 1.2kb / video_cover = 1.2kb
-After: video_thumb_01.svg = 90kb / video_cover = 153kb
+- Before: video_thumb_01.svg = 1.2kb / video_cover = 1.2kb
+- After: video_thumb_01.svg = 90kb / video_cover = 153kb
 
 see here(mobile):
-before: design/no_opt.PNG
-after: design/si_opt.PNG
+- before: design/no_opt.PNG
+- after: design/si_opt.PNG
 
 Lazy loading with Responsive Images
-Before: ~2.4Mb
-After: ~700Kb
+- Before: ~2.4Mb
+- After: ~700Kb
 
 see here(mobile):
 design/opt_sqip_responsive.PNG
@@ -101,7 +101,7 @@ getting more from internet.
 #### Documentation JSDOC
 run `npm jsdoc`. Inside folder "docs" will be created the documents.
 
-### TODO Other Features
+## TODO Other Features
 * Webpack for code splitting (in this example there is a bit javascript code and I don't use it)
 * More css animations.
 * Check OWASP for security.
