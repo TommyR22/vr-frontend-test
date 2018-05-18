@@ -1,0 +1,233 @@
+.nav {
+  margin: 0 20px;
+  padding: 0;
+}
+
+.header {
+  position: fixed;
+  background-color: white;
+}
+.header__menu__icon {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.header__menu__btn--active {
+  font-weight: bold;
+}
+.header__menu li {
+  display: none;
+}
+.header__menu-mobile {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(150deg, #7bc49b, #2891d7);
+  transition: all 0.5s ease;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+}
+.header__menu-mobile--open {
+  opacity: 1;
+  visibility: visible;
+}
+.header__menu-mobile__close {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  color: white;
+  z-index: 3;
+  cursor: pointer;
+}
+.header__menu-mobile__items {
+  text-align: center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.header__menu-mobile__items ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.header__menu-mobile__items ul li {
+  align-items: center;
+  flex: 1;
+  line-height: 10vh;
+}
+.header__menu-mobile__items ul li .header__menu-mobile__items--active {
+  font-weight: bold;
+}
+.header__menu-mobile__items ul li a {
+  font-size: 1.5em;
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+.header__menu-mobile__items ul li a:hover {
+  text-decoration: none;
+}
+
+#maincontent {
+  padding-top: 60px;
+}
+
+.container {
+  margin: 0;
+}
+.container__video-list {
+  margin: 0 20px;
+}
+.container__video-list__item:nth-child(3) {
+  position: relative;
+}
+.container__video-list__item__overlay {
+  display: block;
+  background: rgba(0, 0, 0, 0.8);
+}
+.container__video-list__item:nth-child(4) {
+  display: none;
+}
+.container__video-list__item:nth-child(5) {
+  display: none;
+}
+.container__button {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.container__button button {
+  width: 100%;
+}
+.container__text {
+  margin: 0 20px;
+  width: 100%;
+}
+.container__text__box-title {
+  display: none;
+}
+.container__text__box-select {
+  display: none;
+}
+.container__text__box-select a {
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
+  border-right: 1px solid rgba(128, 128, 128, 0.3);
+  border-left: 1px solid rgba(128, 128, 128, 0.3);
+  padding: 10px;
+  display: block;
+  text-align: center;
+}
+.container__text__box-select a:last-child {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.section__rating {
+  margin: 20px 20px;
+  height: 83px;
+  flex-flow: row wrap;
+}
+.section__rating__text {
+  padding-left: 0;
+  order: 1;
+  flex: 0 0 100%;
+}
+.section__rating__rate {
+  padding-top: 20px;
+  flex: 0 0 100%;
+  order: 2;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.section__rating__rate__text {
+  flex: 0 0 70px;
+}
+.section__rating__rate__icons {
+  flex: 0 0 70px;
+  height: 32px;
+}
+
+.section__description {
+  margin: 70px 20px 50px 20px;
+}
+
+.section__other {
+  margin: 0 20px;
+}
+
+.container__other__card {
+  flex: 0 0 100%;
+}
+.container__other__card__image {
+  height: 350px;
+}
+
+.footer__links .container__links {
+  flex-flow: column nowrap;
+}
+.footer__links .container__links li {
+  text-align: center;
+}
+.footer__links .container__links__one {
+  padding-bottom: 20px;
+  order: 3;
+  flex: auto;
+}
+.footer__links .container__links__two {
+  padding-bottom: 20px;
+  order: 4;
+  flex: auto;
+}
+.footer__links .container__links__three {
+  padding-bottom: 20px;
+  order: 5;
+  flex: auto;
+}
+.footer__links .container__links__four {
+  order: 1;
+  flex: auto;
+}
+.footer__links .container__links__four div {
+  width: 110px;
+  margin: 0 auto;
+}
+.footer__links .container__links__five {
+  padding-bottom: 20px;
+  order: 2;
+  flex: auto;
+}
+.footer__links .container__links__five div {
+  width: 110px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 450px) {
+  .container__video-list__item__overlay {
+    font-size: 0.6rem;
+  }
+
+  .container__other__card__image {
+    height: 150px;
+  }
+}
+
+/*# sourceMappingURL=src/css/max-640.css.map */

@@ -1,0 +1,294 @@
+$margin-side: 20px;
+
+@mixin setMarginLayout($topBottom, $leftRight){
+    margin: $topBottom $leftRight;
+}
+
+@mixin setFlexBox($flex-direction, $flex-wrap, $justify-content, $align-items, $align-content){
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    @if $flex-direction != 0 {
+        flex-direction: $flex-direction;
+        -webkit-flex-direction: $flex-direction;
+    }
+    @if $flex-wrap != 0 {
+        flex-wrap: $flex-wrap;
+        -webkit-flex-direction: $flex-wrap;
+    }
+    @if $justify-content != 0 {
+        justify-content: $justify-content;
+        -webkit-justify-content: $justify-content;
+    }
+    @if $align-items != 0 {
+        align-items: $align-items;
+        -webkit-align-items: $align-items;
+    }
+    @if $align-content != 0 {
+        align-content: $align-content;
+        -webkit-align-content: $align-content;
+    }
+}
+
+.nav {
+    margin: 0 $margin-side;
+    padding: 0;
+}
+
+.header {
+    position: fixed;
+    background-color: white;
+
+    &__menu {
+        &__icon {
+            //position: absolute;
+            //top: 10px;
+            //right: $margin-side;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        &__btn--active {
+            font-weight: bold;
+        }
+        li {
+            display: none;
+        }
+    }
+    &__menu-mobile {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(150deg, #7bc49b, #2891d7);
+        transition: all .5s ease;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        &--open {
+            opacity: 1;
+            visibility: visible;
+            //display: block;
+        }
+
+        &__close {
+            position: fixed;
+            top: 10px;
+            right: $margin-side;
+            color: white;
+            z-index: 3;
+            cursor: pointer;
+        }
+
+        &__items {
+            text-align: center;
+            height: 100vh;
+            @include setFlexBox(column, 0, center, 0, 0);
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                li {
+                    align-items: center;
+                    flex: 1;
+                    line-height: 10vh;
+                    .header__menu-mobile__items--active {
+                        font-weight: bold;
+                    }
+                    a {
+                        font-size: 1.5em;
+                        display: block;
+                        text-decoration: none;
+                        color: white;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+#maincontent {
+    padding-top: 60px;
+}
+
+.container {
+    margin: 0;
+
+    &__video-list {
+        margin: 0 $margin-side;
+        &__item {
+            &:nth-child(3){
+                position: relative;
+            }
+            &__overlay {
+                display: block;
+                background: rgba(0, 0, 0, .8);
+            }
+            &:nth-child(4){display: none}
+            &:nth-child(5){display: none}
+        }
+    }
+
+    &__button {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        button {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        @include setMarginLayout(0, $margin-side);
+        width: 100%;
+        &__box-title {
+            display: none;
+        }
+
+        &__box-select {
+            display: none;
+            a {
+                border-top: 1px solid rgba(128, 128, 128, 0.3);
+                border-right: 1px solid rgba(128, 128, 128, 0.3);
+                border-left: 1px solid rgba(128, 128, 128, 0.3);
+                padding: 10px;
+                display: block;
+                text-align: center;
+                &:last-child {
+                    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+                }
+            }
+
+        }
+    }
+}
+
+.section__rating {
+    @include setMarginLayout(20px, $margin-side);
+    height: 83px;
+    flex-flow: row wrap;
+
+    &__text {
+        padding-left: 0;
+        order: 1; 
+        flex: 0 0 100%;
+    }
+    &__rate {
+        padding-top: 20px;
+        flex: 0 0 100%;
+        order: 2;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+
+        &__text {
+            flex: 0 0 70px;
+        }
+        &__icons {
+            flex: 0 0 70px;
+            height: 32px;
+        }
+    }
+}
+
+.section__description {
+    margin: 70px $margin-side 50px $margin-side;
+
+}
+
+.section__other {
+    @include setMarginLayout(0, $margin-side);
+}
+.container__other {
+    &__card {   
+        flex: 0 0 100%;
+        &__image {
+            height: 350px;
+        }
+    }
+}
+
+.footer {
+    &__links {
+        .container__links {
+            flex-flow: column nowrap;
+            li {
+                text-align: center;
+            }
+
+            &__one {
+                padding-bottom: 20px;
+                order: 3;
+                flex: auto;
+            }
+            &__two {
+                padding-bottom: 20px;
+                order: 4;
+                flex: auto;
+            }
+            &__three {
+                padding-bottom: 20px;
+                order: 5;
+                flex: auto;
+            }
+            &__four {
+                order: 1;
+                flex: auto;
+                div {
+                    width: 110px;
+                    margin: 0 auto;
+                }
+            }
+            &__five {
+                padding-bottom: 20px;
+                order: 2;
+                flex: auto;
+                div {
+                    width: 110px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        &__video-list {
+            &__item {
+                &__overlay {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+
+    .container__other {
+        &__card {
+            &__image {
+                height: 150px;
+            }
+        }
+
+    }
+}
+
+

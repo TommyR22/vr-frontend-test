@@ -1,0 +1,17 @@
+.container__cover {
+  order: 1;
+  width: 100%;
+}
+.container__text {
+  order: 3;
+  width: 100%;
+}
+.container__video-list {
+  order: 2;
+}
+
+.footer {
+  margin-top: 250px;
+}
+
+/*# sourceMappingURL=src/css/max-1024.css.map */

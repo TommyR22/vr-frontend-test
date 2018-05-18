@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#2891d7"/>
+
+    <link rel="manifest" href="manifest.json"><!-- Web Manifest -->
+
+    <link rel="preload" as="image" href="assets/logo.png"/><!-- load logo with hight priority (slow internet connection) -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" media="(max-width: 640px)" href="css/max-640.css">
+    <link rel="stylesheet" media="(max-width: 1024px)" href="css/max-1024.css">
+    <link rel="stylesheet" media="(min-width: 1024px)" href="css/max-1400.css">
+
+    <title>vr-frontend-test</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <img class="header__logo" src="assets/logo.png" alt="logo company" width="100">
+            <aside class="header__menu-mobile">
+                <div class="header__menu-mobile__close">
+                    <img class="header__menu-mobile__close__icon" src="assets/icon_close.svg" alt="menu icon close" width="40" onclick="openCloseMenu()">
+                </div>
+                <nav class="header__menu-mobile__items">
+                    <ul>
+                        <li>
+                            <a href="#" class="header__menu-mobile__items--active">VIDEOS</a>
+                        </li>
+                        <li>
+                            <a href="#">CHANNELS</a>
+                        </li>
+                        <li>
+                            <a href="#">HELP</a>
+                        </li>
+                        <li>
+                            <a href="#">JOIN</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="header__menu">
+                <li>
+                    <a class="header__menu__btn header__menu__btn--active" href="#">VIDEOS</a>
+                </li>
+                <li>
+                    <a class="header__menu__btn" href="#">CHANNELS</a>
+                </li>
+                <li>
+                    <a class="header__menu__btn" href="#">HELP</a>
+                </li>
+                <li>
+                    <a class="header__menu__btn" href="#">JOIN</a>
+                </li>
+
+                <img class="header__menu__icon" src="assets/icon_burger.svg" alt="menu icon mobile" width="40" onclick="openCloseMenu()">
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div id="maincontent">
+        <section class="container">
+
+            <div class="container__cover">
+                <img class="container__cover__img lazy-image"
+                     src="assets/svg/video_cover.svg"
+                     data-src="video_cover.jpg" alt="cover video"
+                     data-srcset="video_cover-640.jpg 640,video_cover-1024.jpg 1024,video_cover.jpg 1400">
+                <div class="container__cover__play">
+                    <div class="container__cover__play__img">
+                        <img src="assets/icon_play.png" alt="play icon" width="60">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container__text">
+                <div class="container__button">
+                    <button class="btn btn__download" onclick="showOptions()">
+                        <img src="assets/icon_download.svg" width="15px" alt="download icon"> Download
+                    </button>
+                </div>
+                <div class="container__text__box-title">
+                    <span class="container__text__box-title__text">Download Options</span>
+                    <div class="container__text__box-title__line"></div>
+                </div>
+                <div class="container__text__box-select" id="select">
+                    <div><a class="container__text__box-select__text">Mobile LQ - 30fps (1.8GB)</a></div>
+                    <div><a class="container__text__box-select__text">Mobile HQ - 60fps (2.6GB)</a></div>
+                    <div><a class="container__text__box-select__text">Vive / Oculus - 60fps (7GB)</a></div>
+                    <div><a class="container__text__box-select__text">Gear VR - 60fps (3.6GB)</a></div>
+                    <div><a class="container__text__box-select__text">Playstation VR - 60fps (2.6GB)</a></div>
+                    <div><a class="container__text__box-select__text">Daydream View - 60fps (3.6GB)</a></div>
+                </div>
+            </div>
+
+
+            <section class="container__video-list">
+                <div class="container__video-list__item">
+                    <img class="lazy-image"
+                         data-src="video_thumb_01.jpg"
+                         src="assets/svg/video_thumb_01.svg"
+                         data-srcset="video_thumb_01-640.jpg 640,video_thumb_01-1024.jpg 1024,video_thumb_01.jpg 1400"
+                         alt="video thumb 1">
+                </div>
+                <div class="container__video-list__item">
+                    <img class="lazy-image"
+                         data-src="video_thumb_02.jpg"
+                         src="assets/svg/video_thumb_02.svg"
+                         data-srcset="video_thumb_02-640.jpg 640,video_thumb_02-1024.jpg 1024,video_thumb_02.jpg 1400"
+                         alt="video thumb 2">
+                </div>
+                <div class="container__video-list__item">
+                    <img class="lazy-image"
+                         data-src="video_thumb_03.jpg"
+                         src="assets/svg/video_thumb_03.svg"
+                         data-srcset="video_thumb_03-640.jpg 640,video_thumb_03-1024.jpg 1024,video_thumb_03.jpg 1400"
+                         alt="video thumb 3">
+                    <div class="container__video-list__item__overlay">
+                        <div class="container__video-list__item__overlay__text">+2 more photos</div>
+                    </div>
+                </div>
+                <div class="container__video-list__item">
+                    <img class="lazy-image"
+                         data-src="video_thumb_04.jpg"
+                         src="assets/svg/video_thumb_04.svg"
+                         data-srcset="video_thumb_04-640.jpg 640,video_thumb_04-1024.jpg 1024,video_thumb_04.jpg 1400"
+                         alt="video thumb 4">
+                </div>
+                <div class="container__video-list__item">
+                    <img class="lazy-image"
+                         data-src="video_thumb_05.jpg"
+                         src="assets/svg/video_thumb_05.svg"
+                         data-srcset="video_thumb_05-640.jpg 640,video_thumb_05-1024.jpg 1024,video_thumb_05.jpg 1400"
+                         alt="video thumb 5">
+                </div>
+            </section>
+
+        </section>
+
+        <section class="section__rating">
+            <div class="section__rating__rate">
+                <div class="section__rating__rate__text">
+                    8.5
+                </div>
+                <div class="section__rating__rate__icons">
+                    <div class="section__rating__rate__icons__like--active">
+                        <img src="assets/icon_like.png" alt="like icon">
+                    </div>
+                    <div class="section__rating__rate__icons__dislike">
+                        <img src="assets/icon_dislike.png" alt="dislike icon">
+                    </div>
+                </div>
+            </div>
+            <div class="section__rating__text">
+                <div>Uploaded: October 12, 2017</div>
+                <div>Duration: 35 min</div>
+                <div>Tags:
+                    <a>Animals</a>,
+                    <a>Sea</a>,
+                    <a>Documentary</a>,
+                    <a>Nature</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section__description">
+            <h1>Deep ocean is the final frontier</h1>
+            <div class="section__description__text">
+                <p>Beneath the waves is a mysterious world that takes up to 95% to Earth's living space. Only three people have
+                    ever reached the bottom of the deepest part of the ocean. The deep is a world without sunlight, of freezing
+                    temperatures, and immense pressure. It's remained largely unexplored until now. Cutting-edge technology
+                    is enabling a new generation of aquanauts to explore deeper than ever before. They are opening up a whole
+                    new world of ptential benefits to humanity. The risks are great, but the rewards could be greater. From
+                    a vast wealth of resources to clues about the origins of life, the race is on to the final frontier.
+                </p>
+            </div>
+            <h1>Discussion</h1>
+            <div class="section__description__text">
+                <p>Don't be shy! Share your thoughts and feedback in the
+                    <a>comments section</a>.
+                </p>
+            </div>
+            <button class="btn">
+                Video feedback
+            </button>
+        </section>
+
+        <section class="section__other">
+            <h1>More from this user</h1>
+            <div class="container__other">
+                <article class="container__other__card" href="#">
+                    <div class="container__other__card__image lazy-image"
+                         data-src="other_thumb_01.jpg"
+                         data-srcset="other_thumb_01-640.jpg 640,other_thumb_01-1024.jpg 1024,other_thumb_01.jpg 1400"
+                         style="background-image: url(assets/svg/other_thumb_01.svg);">
+                    </div>
+                    <div class="container__other__card__text">
+                        <div class="container__other__card__text__title">
+                            <h3>Velit praesent varius, arcu nec arcu libero, lorem ipsum ecc</h3>
+                        </div>
+                        <div class="container__other__card__text__summary">
+                            <div class="container__other__card__text__summary__div">
+                                <div class="container__other__card__text__summary__div__left">
+                                    <p>Lorem ipsum dolore sit amet, enim turpis pelientesque mauris a non, molestie</p>
+                                </div>
+                                <div class="container__other__card__text__summary__div__right">
+                                    7.4
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="container__other__card" href="#">
+                    <div class="container__other__card__image lazy-image"
+                         data-src="other_thumb_02.jpg"
+                         data-srcset="other_thumb_02-640.jpg 640,other_thumb_02-1024.jpg 1024,other_thumb_02.jpg 1400"
+                         style="background-image: url(assets/svg/other_thumb_02.svg);">
+                    </div>
+                    <div class="container__other__card__text">
+                        <div class="container__other__card__text__title">
+                            <h3>Sit neque a habitant vitae, vavamus</h3>
+                        </div>
+                        <div class="container__other__card__text__summary">
+                            <div class="container__other__card__text__summary__div">
+                                <div class="container__other__card__text__summary__div__left">
+                                    <p>Mus solicitudin malesuada arcu lobortis justo in, metus uliamcorper, ligula donec pulvinar
+                                        sit, nunc odio laoreet massa.</p>
+                                </div>
+                                <div class="container__other__card__text__summary__div__right">
+                                    8.3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="container__other__card" href="#">
+                    <div class="container__other__card__image lazy-image"
+                         data-src="other_thumb_03.jpg"
+                         data-srcset="other_thumb_03-640.jpg 640,other_thumb_03-1024.jpg 1024,other_thumb_03.jpg 1400"
+                         style="background-image: url(assets/svg/other_thumb_03.svg)">
+                    </div>
+                    <div class="container__other__card__text">
+                        <div class="container__other__card__text__title">
+                            <h3>Placerat sit libero vitae at amet etiam, nam initia amet</h3>
+                        </div>
+                        <div class="container__other__card__text__summary">
+                            <div class="container__other__card__text__summary__div">
+                                <div class="container__other__card__text__summary__div__left">
+                                    <p>Lorem ipsum dolore sit amet, enim turpis pelientesque mauris a non, molestie</p>
+                                </div>
+                                <div class="container__other__card__text__summary__div__right">
+                                    9.1
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="container__other__card" href="#">
+                    <div class="container__other__card__image lazy-image"
+                         data-src="other_thumb_04.jpg"
+                         data-srcset="other_thumb_04-640.jpg 640,other_thumb_04-1024.jpg 1024,other_thumb_04.jpg 1400"
+                         style="background-image: url(assets/svg/other_thumb_04.svg)">
+                    </div>
+                    <div class="container__other__card__text">
+                        <div class="container__other__card__text__title">
+                            <h3>Wisi vel amet morbi</h3>
+                        </div>
+                        <div class="container__other__card__text__summary">
+                            <div class="container__other__card__text__summary__div">
+                                <div class="container__other__card__text__summary__div__left">
+                                    <p>Lorem ipsum dolore sit amet, enim turpis pelientesque mauris a non, molestie</p>
+                                </div>
+                                <div class="container__other__card__text__summary__div__right">
+                                    5.3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="container__other__card" href="#">
+                    <div class="container__other__card__image lazy-image"
+                         data-src="other_thumb_05.jpg"
+                         data-srcset="other_thumb_05-640.jpg 640,other_thumb_05-1024.jpg 1024,other_thumb_05.jpg 1400"
+                         style="background-image: url(assets/svg/other_thumb_05.svg)">
+                    </div>
+                    <div class="container__other__card__text">
+                        <div class="container__other__card__text__title">
+                            <h3>Eget vestibulum posuere lectus orci sit</h3>
+                        </div>
+                        <div class="container__other__card__text__summary">
+                            <div class="container__other__card__text__summary__div">
+                                <div class="container__other__card__text__summary__div__left">
+                                    <p>Lorem ipsum dolore sit amet, enim turpis pelientesque mauris a non, molestie</p>
+                                </div>
+                                <div class="container__other__card__text__summary__div__right">
+                                    7.8
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="container__other__card" href="#">
+                    <div class="container__other__card__image lazy-image"
+                         data-src="other_thumb_06.jpg"
+                         data-srcset="other_thumb_06-640.jpg 640,other_thumb_06-1024.jpg 1024,other_thumb_06.jpg 1400"
+                         style="background-image: url(assets/svg/other_thumb_06.svg)">
+                    </div>
+                    <div class="container__other__card__text">
+                        <div class="container__other__card__text__title">
+                            <h3>A prestium vulputate ante</h3>
+                        </div>
+                        <div class="container__other__card__text__summary">
+                            <div class="container__other__card__text__summary__div">
+                                <div class="container__other__card__text__summary__div__left">
+                                    <p>Lorem ipsum dolore sit amet, enim turpis pelientesque mauris a non, molestie</p>
+                                </div>
+                                <div class="container__other__card__text__summary__div__right">
+                                    9.3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <button class="btn">
+                    More Videos
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__links">
+            <div class="container__links">
+                <div class="container__links__one">
+                    <li>
+                        <span href="#">Videos</span>
+                    </li>
+                    <li>
+                        <span href="#">Channels</span>
+                    </li>
+                    <li>
+                        <span href="#">Help</span>
+                    </li>
+                    <li>
+                        <span href="#">News</span>
+                    </li>
+                </div>
+                <div class="container__links__two">
+                    <li>
+                        <span href="#">Term and Conditions</span>
+                    </li>
+                    <li>
+                        <span href="#">Privacy Policy</span>
+                    </li>
+                    <li>
+                        <span href="#">USC 2257</span>
+                    </li>
+                    <li>
+                        <span href="#">DMCA</span>
+                    </li>
+                </div>
+                <div class="container__links__three">
+                    <li>
+                        <span href="#">WEBMASTERS</span>
+                    </li>
+                    <li>
+                        <span href="#">Press Inquiries</span>
+                    </li>
+                    <li>
+                        <span href="#">Support</span>
+                    </li>
+                </div>
+                <div class="container__links__four">
+                    <div class="prova">
+                        <img src="assets/social/facebook.svg" alt="facebook icon">
+                        <span>Facebook</span>
+                    </div>
+                    <div>
+                        <img src="assets/social/instagram.svg" alt="instagram icon">
+                        <span>Instagram</span>
+                    </div>
+                    <div>
+                        <img src="assets/social/twitter.svg" alt="twitter icon">
+                        <span>Twitter</span>
+                    </div>
+                </div>
+                <div class="container__links__five">
+                    <div>
+                        <img src="assets/social/youtube.svg" alt="youtube icon">
+                        <span>Youtube</span>
+                    </div>
+                    <div>
+                        <img src="assets/social/tumblr.svg" alt="tumblr icon">
+                        <span>Tumblr</span>
+                    </div>
+                    <div>
+                        <img src="assets/social/snapchat.svg" alt="snapchat icon">
+                        <span>Snapchat</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer__copyright">
+            Copyright © SomeSite 2018
+        </div>
+    </footer>
+
+</body>
+
+<script src="index.js"></script>
+
+</html>

@@ -1,0 +1,17 @@
+.container {
+    &__cover {
+        order: 1;
+        width: 100%;
+    }
+    &__text {
+        order: 3;
+        width: 100%;
+    }
+    &__video-list {
+        order: 2;
+    }
+}
+
+.footer {
+    margin-top: 250px;
+}
