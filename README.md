@@ -42,9 +42,9 @@ When evaluating your test, the following things are especially important to us:
 
 
 ### Instructions
-*run `npm install` for dependencies.
-*Use a http server to load app. I've used Http-server repo from npm.
-*use grunt tasks such as `grunt server` to start web server.
+* run `npm install` for dependencies.
+* Use a http server to load app. I've used Http-server repo from npm.
+* use grunt tasks such as `grunt server` to start web server.
 
 Inside "src" folder there is development project.
 Inside "dist" folder there is DEV or PROD project.
@@ -61,10 +61,10 @@ I also implemented a with a little code Lazy loading with responsive images (dif
 With lazy loading I can't use `srcset` and `sizes` tag, so I used `data-srcset` with three resolutions: 640, 1024 and 1400.
 
 ##### Instructions
-*generate svg image from original ones: `sqip -o output.svg input.jpg`
-*In html page add class `lazy-image` to lazy loading that image and add `data-src="path-to-original-image"` and `src="path-to-svg-image"`, same for div with background-image property.
-*If we would use responsive image, add `data-srcset` to image with the three resolutions and create three image such as video-cover, video-cover-640 and video-cover-1024.
-*Try it!
+* generate svg image from original ones: `sqip -o output.svg input.jpg`
+* In html page add class `lazy-image` to lazy loading that image and add `data-src="path-to-original-image"` and `src="path-to-svg-image"`, same for div with background-image property.
+* If we would use responsive image, add `data-srcset` to image with the three resolutions and create three image such as video-cover, video-cover-640 and video-cover-1024.
+* Try it!
 
 ###### Performance
 SQIP and lazy loading
@@ -102,12 +102,12 @@ getting more from internet.
 run `npm jsdoc`. Inside folder "docs" will be created the documents.
 
 ### TODO Other Features
-*Webpack for code splitting (in this example there is a bit javascript code and I don't use it)
-*More css animations.
-*Check OWASP for security.
-*Web push notifications.
-*Image Optimization using the new format WebP.
-*Cache images with IndexedDb.
-*Update js Code with ES6 and polyfills for old browser(IE 10/11).
-*Unit test and e2e.
+* Webpack for code splitting (in this example there is a bit javascript code and I don't use it)
+* More css animations.
+* Check OWASP for security.
+* Web push notifications.
+* Image Optimization using the new format WebP.
+* Cache images with IndexedDb.
+* Update js Code with ES6 and polyfills for old browser(IE 10/11).
+* Unit test and e2e.
 
